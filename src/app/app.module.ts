@@ -12,9 +12,20 @@ import { AsiaCountriesComponent } from './asia-countries/asia-countries.componen
 import { AfricaCountriesComponent } from './africa-countries/africa-countries.component';
 import { AmericaCountriesComponent } from './america-countries/america-countries.component';
 import { OceanieComponent } from './oceanie/oceanie.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, AllMyCountriesComponent, EuropeCountriesComponent, AsiaCountriesComponent, AfricaCountriesComponent, AmericaCountriesComponent, OceanieComponent],
-  imports: [BrowserModule, AppRoutingModule, NavbarComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    AllMyCountriesComponent,
+    EuropeCountriesComponent,
+    AsiaCountriesComponent,
+    AfricaCountriesComponent,
+    AmericaCountriesComponent,
+    OceanieComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, NavbarComponent, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

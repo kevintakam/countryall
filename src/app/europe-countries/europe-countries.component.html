@@ -1,1 +1,14 @@
-<p>europe-countries works!</p>
+<!-- all-my-countries.component.html -->
+<div *ngIf="europeanCountries">
+  <div *ngFor="let Ecountry of europeanCountries" class="country-container">
+    <div class="country-block">
+      <h1>{{ Ecountry.name.common }}</h1>
+      <p>Région: {{ Ecountry.region }}</p>
+      <img
+        [src]="Ecountry.flags.png"
+        alt="Drapeau de {{ Ecountry.name.common }}"
+      />
+      <!-- Ajoutez d'autres propriétés au besoin -->
+    </div>
+  </div>
+</div>
