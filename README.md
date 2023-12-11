@@ -1,3 +1,8 @@
+#for the execution fof the app , it's necessay to intall:
+
+tailwind Css: - npm install tailwindcss --save-dev (for installation)
+flowbite: - npm install flowbite
+
 # Countryall
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.10.

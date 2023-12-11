@@ -13,6 +13,8 @@ import { AfricaCountriesComponent } from './africa-countries/africa-countries.co
 import { AmericaCountriesComponent } from './america-countries/america-countries.component';
 import { OceanieComponent } from './oceanie/oceanie.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SearchService } from './services/search.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,8 +27,14 @@ import { HttpClientModule } from '@angular/common/http';
     AmericaCountriesComponent,
     OceanieComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, NavbarComponent, HttpClientModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NavbarComponent,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
+  providers: [SearchService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

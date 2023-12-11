@@ -1,14 +1,21 @@
-<!-- all-my-countries.component.html -->
-<div *ngIf="countriesData">
-  <div *ngFor="let country of countriesData" class="country-container">
-    <div class="country-block">
-      <h1>{{ country.name.common }}</h1>
-      <p>Région: {{ country.region }}</p>
-      <img
-        [src]="country.flags.png"
-        alt="Drapeau de {{ country.name.common }}"
-      />
-      <!-- Ajoutez d'autres propriétés au besoin -->
+<div *ngIf="message; else countryList">
+  <p>{{ message }}</p>
+</div>
+<ng-template #countryList>
+  <div *ngIf="filteredCountries.length > 0; else noResults">
+    <div *ngFor="let country of filteredCountries" class="country-container">
+      <div class="country-block">
+        <h1>{{ country.name.common }}</h1>
+        <p>Région: {{ country.region }}</p>
+        <img
+          [src]="country.flags.png"
+          alt="Drapeau de {{ country.name.common }}"
+        />
+        <!-- Ajoutez d'autres propriétés au besoin -->
+      </div>
     </div>
   </div>
-</div>
+  <ng-template #noResults>
+    <p>Aucun pays trouvé</p>
+  </ng-template>
+</ng-template>

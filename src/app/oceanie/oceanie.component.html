@@ -1,14 +1,22 @@
-<!-- all-my-countries.component.html -->
-<div *ngIf="OceaniaCountries">
-  <div *ngFor="let Ocountry of OceaniaCountries" class="country-container">
+<!-- Oceanian-countries.component.html -->
+<div *ngIf="message">
+  <p>{{ message }}</p>
+</div>
+<div *ngIf="filteredCountries && filteredCountries.length > 0">
+  <div *ngFor="let country of filteredCountries" class="country-container">
     <div class="country-block">
-      <h1>{{ Ocountry.name.common }}</h1>
-      <p>Région: {{ Ocountry.region }}</p>
+      <h1>{{ country.name.common }}</h1>
+      <p>Région: {{ country.region }}</p>
       <img
-        [src]="Ocountry.flags.png"
-        alt="Drapeau de {{ Ocountry.name.common }}"
+        [src]="country.flags.png"
+        alt="Drapeau de {{ country.name.common }}"
       />
-      <!-- Ajoutez d'autres propriétés au besoin -->
     </div>
   </div>
+</div>
+<div
+  *ngIf="!message && (!OceaniaCountries || OceaniaCountries.length === 0)"
+  #noResults
+>
+  <p>No countries found in Oceania.</p>
 </div>
