@@ -9,6 +9,11 @@ footer {
   margin: 0px;
   padding: 0px;
 }
+.main-info .Country-title {
+  font-size: 30px;
+  color: #1c5bfe;
+  font-weight: 700;
+}
 .blue {
   color: blue; /* Ajoutez les styles bleus que vous souhaitez */
 }
@@ -26,4 +31,80 @@ footer {
   width: 70%; /* Adjust the width as needed */
 }
 
+.country-details-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: auto;
+  font-family: "Arial", sans-serif;
+}
+
+.header {
+  background-color: #eee;
+  padding: 20px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.content {
+  display: flex;
+  margin-top: 20px;
+}
+
+.sidebar {
+  flex: 1;
+  padding: 20px;
+}
+
+.location-box {
+  border: 2px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.main-info {
+  flex: 3;
+  padding: 20px;
+  border-left: 2px solid #ccc;
+}
+.main-info .map strong {
+  color: black;
+  padding-right: 5px;
+}
+.main-info h2 {
+  color: #1c5bfe;
+  margin-bottom: 20px;
+}
+
+.main-info p {
+  margin: 10px 0;
+}
+
+.main-info p strong {
+  color: #1c5bfe;
+}
+
+.map {
+  border: 2px solid #ccc;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Ajoutez des médias queries pour la réactivité si nécessaire */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid #ccc;
+  }
+
+  .main-info {
+    width: 100%;
+    border-left: none;
+  }
+}
 /* Add media queries for responsiveness if required */

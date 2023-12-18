@@ -8,10 +8,11 @@
     <div class="country-block">
       <h1>{{ country.name.common }}</h1>
       <p>Région: {{ country.region }}</p>
-      <img
-        [src]="country.flags.png"
-        alt="Drapeau de {{ country.name.common }}"
-      />
+      <a [routerLink]="['/country-details', country.cca3]"
+        ><img
+          [src]="country.flags.png"
+          alt="Drapeau de {{ country.name.common }}"
+      /></a>
     </div>
   </div>
 </div>

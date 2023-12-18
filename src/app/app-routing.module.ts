@@ -6,6 +6,7 @@ import { AmericaCountriesComponent } from './america-countries/america-countries
 import { AfricaCountriesComponent } from './africa-countries/africa-countries.component';
 import { AllMyCountriesComponent } from './all-my-countries/all-my-countries.component';
 import { OceanieComponent } from './oceanie/oceanie.component';
+import { CountryDetailsComponent } from './country-details/country-details.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'oceanie',
     component: OceanieComponent,
+  },
+  {
+    path: 'country-details/:code',
+    component: CountryDetailsComponent,
   },
   {
     path: '', // Route par défaut (page d'accueil)

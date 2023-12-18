@@ -15,6 +15,7 @@ import { OceanieComponent } from './oceanie/oceanie.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SearchService } from './services/search.service';
+import { CountryDetailsComponent } from './country-details/country-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { SearchService } from './services/search.service';
     AfricaCountriesComponent,
     AmericaCountriesComponent,
     OceanieComponent,
+    CountryDetailsComponent,
   ],
   imports: [
     BrowserModule,

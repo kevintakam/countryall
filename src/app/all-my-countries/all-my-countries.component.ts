@@ -10,7 +10,7 @@ import { distinctUntilChanged } from 'rxjs';
 })
 export class AllMyCountriesComponent implements OnInit {
   countriesData!: any[];
-  filteredCountries: any[] = [];
+  filteredCountries!: any[];
   searchCtrl!: FormControl;
   message: string = '';
   constructor(
@@ -22,10 +22,12 @@ export class AllMyCountriesComponent implements OnInit {
     this.searchCtrl = new FormControl('');
 
     // Souscrire aux changements de recherche avec distinctUntilChanged
-    this.searchService.search$.pipe(distinctUntilChanged()).subscribe((searchTerm) => {
-      this.searchCtrl.setValue(searchTerm);
-      this.filterCountries();
-    });
+    this.searchService.search$
+      .pipe(distinctUntilChanged())
+      .subscribe((searchTerm) => {
+        this.searchCtrl.setValue(searchTerm);
+        this.filterCountries();
+      });
 
     // Souscrire aux changements dans la zone de recherche
     this.searchCtrl.valueChanges.subscribe((value) => {
@@ -45,7 +47,7 @@ export class AllMyCountriesComponent implements OnInit {
         (result) => {
           if (result.length > 0) {
             this.filteredCountries = result;
-            this.message = ''; // Aucun besoin de message si des pays sont trouvés
+            this.message = '';
           } else {
             this.filteredCountries = [];
             this.message = 'Country no found : ' + searchTerm;

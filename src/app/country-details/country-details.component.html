@@ -1,0 +1,57 @@
+<!-- country-detail.component.html -->
+<div *ngIf="country; else loading" class="country-details-container">
+  <div class="header">
+    <h1>Informations Sur {{ country[0].name.common }}</h1>
+  </div>
+  <div class="content">
+    <div class="sidebar">
+      <div class="location-box">
+        <p>Location</p>
+        <img
+          [src]="country[0].flags.png"
+          alt="Flag of {{ country[0].name.common }}"
+        />
+      </div>
+    </div>
+    <div class="main-info">
+      <h2 class="Country-title text-center text-blue">
+        {{ country[0].name.common }}
+      </h2>
+      <p><strong>Langues officielles:</strong></p>
+      <p *ngFor="let lang of getLanguages(country[0].languages)">
+        <span>{{ lang }}</span>
+      </p>
+      <p><strong>Capitale:</strong> {{ country[0].capital }}</p>
+      <p *ngFor="let currencyKey of getcurrencies(country[0].currencies)">
+        <strong>Devise:</strong>
+        {{ country[0].currencies[currencyKey].name }}
+        <strong>( {{ currencyKey }} )</strong>
+      </p>
+      <p><strong>Région:</strong> {{ country[0].region }}</p>
+      <div *ngIf="country[0].borders?.length; else noBorders">
+        <p>
+          <strong>Pays frontières:</strong> {{ country[0].borders.join(", ") }}
+        </p>
+      </div>
+      <ng-template #noBorders>
+        <p><strong>Pays frontières:</strong> Non renseigné</p>
+      </ng-template>
+
+      <div class="map">
+        <p>
+          <strong>Maps:</strong>
+          <a href="{{ country[0].maps.googleMaps }}">
+            <u style="color: blue">{{ country[0].maps.googleMaps }}</u></a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>
+
+<ng-template #nocountrylimit>
+  <p>Non renseigné</p>
+</ng-template>

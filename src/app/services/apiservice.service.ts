@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, map } from 'rxjs';
+import { BehaviorSubject, Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +8,7 @@ import { Observable, map } from 'rxjs';
 export class ApiserviceService {
   constructor(private http: HttpClient) {}
   ApiUrl = 'https://restcountries.com/v3.1/all';
-
+  ApiCode = 'https://restcountries.com/v3.1/alpha/';
   getCountryData(): Observable<any> {
     return this.http.get<any[]>(`${this.ApiUrl}`);
   }
@@ -35,5 +35,15 @@ export class ApiserviceService {
           )
         )
       );
+  }
+  private countryCodeSource = new BehaviorSubject<string | null>(null);
+  countryCode$ = this.countryCodeSource.asObservable();
+
+  setCountryCode(code: string) {
+    this.countryCodeSource.next(code);
+  }
+  getCountryByCode(code: string): Observable<any> {
+    const url = `${this.ApiCode}${code}`;
+    return this.http.get<any>(url);
   }
 }
