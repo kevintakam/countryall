@@ -6,7 +6,7 @@
   <div class="content">
     <div class="sidebar">
       <div class="location-box">
-        <p>Location</p>
+        <p>Country Flag</p>
         <img
           [src]="country[0].flags.png"
           alt="Flag of {{ country[0].name.common }}"
@@ -19,9 +19,10 @@
       </h2>
       <p><strong>Langues officielles:</strong></p>
       <p *ngFor="let lang of getLanguages(country[0].languages)">
-        <span>{{ lang }}</span>
+        <span class="language">{{ lang }}</span>
       </p>
       <p><strong>Capitale:</strong> {{ country[0].capital }}</p>
+      <p><strong>population:</strong> {{ country[0].population }}</p>
       <p *ngFor="let currencyKey of getcurrencies(country[0].currencies)">
         <strong>Devise:</strong>
         {{ country[0].currencies[currencyKey].name }}

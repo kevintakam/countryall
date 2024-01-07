@@ -5,8 +5,12 @@
   <div *ngIf="filteredCountries.length > 0; else noResults">
     <div *ngFor="let country of filteredCountries" class="country-container">
       <div class="country-block">
-        <h1>{{ country.name.common }}</h1>
+        <h1>
+          {{ country.name.common }}
+        </h1>
         <p>Région: {{ country.region }}</p>
+        <p>Capitale: {{ country.capital }}</p>
+        <p>Population: {{ country.population }}</p>
         <a [routerLink]="['/country-details', country.cca3]"
           ><img
             [src]="country.flags.png"

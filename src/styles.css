@@ -17,6 +17,10 @@ footer {
 .blue {
   color: blue; /* Ajoutez les styles bleus que vous souhaitez */
 }
+.country-block h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
 /* all-my-countries.component.css */
 .country-container {
   margin-top: 25px;
@@ -27,7 +31,7 @@ footer {
 
 .country-block {
   border: 1px solid #ccc;
-  padding: 10px;
+  padding: 5px;
   width: 70%; /* Adjust the width as needed */
 }
 
@@ -38,12 +42,36 @@ footer {
   margin: auto;
   font-family: "Arial", sans-serif;
 }
+.content img {
+  transition: transform 0.3s ease; /* Animation douce pour le zoom */
+  display: block; /* Élimine l'espace en dessous de l'image */
+  filter: blur(2px); /* Applique un effet de flou */
+}
+
+p .language {
+  display: inline; /* ou inline */
+  margin-right: 10px;
+  padding: 2px 6px;
+  background-color: pink;
+  border-radius: 2px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+.content img:hover {
+  transform: scale(
+    1.1
+  ); /* Agrandit l'image à 110% de sa taille normale lors du survol */
+  filter: none; /* Retire l'effet de flou lors du survol */
+}
 
 .header {
-  background-color: #eee;
+  background-color: #1c5bfe;
   padding: 20px;
   text-align: center;
   margin-top: 30px;
+}
+.header h1 {
+  color: white;
 }
 
 .content {
@@ -108,3 +136,137 @@ footer {
   }
 }
 /* Add media queries for responsiveness if required */
+
+/*css pour ma page about */
+
+/* Reset de base pour les marges et le padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Police de caractère par défaut pour toute la page */
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.about-section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-section h1,
+.about-section h2 {
+  color: #4caf50; /* Couleur verte */
+}
+
+.about-header {
+  margin-bottom: 1rem;
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-between; /* Ajuste les éléments enfants avec de l'espace entre eux */
+  align-items: center; /* Centre les éléments verticalement */
+  margin-top: 2rem;
+}
+
+.text-content {
+  flex: 1; /* Prend 50% de l'espace disponible */
+  padding-right: 2rem; /* Espace entre le texte et l'image */
+}
+
+.image-content {
+  flex: 1; /* Prend 50% de l'espace disponible */
+}
+
+.image-content img {
+  max-width: 100%; /* S'assure que l'image ne déborde pas de son conteneur */
+  height: auto; /* Maintient le ratio de l'image */
+}
+nav {
+  background-color: #07182e;
+}
+nav span {
+  color: white;
+}
+nav #navbar-sticky ul {
+  padding: 5px;
+  background-color: #07182e;
+}
+footer {
+  background-color: #1c5bfe;
+}
+footer a {
+  color: white;
+}
+footer span {
+  color: bisque;
+}
+/* page contact*/
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.box-left {
+  display: block;
+  max-height: 80%;
+  margin: 20px;
+  margin-bottom: 80%;
+  border: 2px solid indigo;
+  width: 50%;
+  text-align: center;
+}
+.box-left > h3,
+.box-right > h3 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+}
+.box-left > span,
+.box-right > span {
+  color: indigo;
+
+  font-size: 15px;
+}
+.box-left > span > p,
+.box-right > span > p {
+  color: black;
+
+  font-size: 12px;
+}
+.box-right {
+  display: block;
+  max-height: 80%;
+  margin: 20px;
+  margin-bottom: 80%;
+  border: 2px solid indigo;
+  width: 50%;
+  text-align: center;
+}
+/* Pour les écrans plus petits, la disposition change */
+@media screen and (max-width: 768px) {
+  .about-content {
+    flex-direction: column-reverse; /* Image au-dessus du texte */
+  }
+
+  .text-content,
+  .image-content {
+    padding: 0;
+    flex: none; /* N'applique pas la règle flex 1 pour que les enfants prennent toute la largeur */
+  }
+
+  .text-content {
+    margin-top: 1rem; /* Ajoute un peu d'espace entre l'image et le texte */
+  }
+}

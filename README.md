@@ -1,5 +1,7 @@
 #for the execution fof the app , it's necessay to intall:
 
+il est important d'installer tailwind pour le style et la librairie flowbite
+
 tailwind Css: - npm install tailwindcss --save-dev (for installation)
 flowbite: - npm install flowbite
 
